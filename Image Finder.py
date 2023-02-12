@@ -14,11 +14,15 @@ with open('sites.csv', 'r') as file:
 
         soup = BeautifulSoup(response.text, 'html.parser')
         img_tags = soup.find_all('img')
+        print(img_tags)
 
         urls = [img['src'] for img in img_tags]
 
         for url in urls:
-            filename = re.search(r'/([\w_-]+[.](jpg|png|jpeg))$', url)
+            filename = re.search(r'picatt.52av.one/attachments/', url)
+            #filename = re.search(r'https://picatt.52av.one/attachments/*\.jpg$', url)
+            #filename = re.search(r'/([\w_-]+[.](jpg|png|jpeg))$', url)
+            print(filename)
             if not filename:
                  print("Regex didn't match with the url: {}".format(url))
                  continue
@@ -29,5 +33,5 @@ with open('sites.csv', 'r') as file:
                     # to be the site variable atm. 
                     url = '{}{}'.format(site, url)
                 response = requests.get(url)
-                if len(response.content) >= 100000:
+                if len(response.content) >= 10000:
                     f.write(response.content)
