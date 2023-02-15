@@ -119,7 +119,7 @@ current_directory = r'C:\Users\QuangTrang\source\repos\z'
 
 # Read in the existing urls from the result.csv file
 existing_urls = []
-result_file = os.path.join(current_directory, 'result.csv')
+result_file = os.path.join(current_directory, 'Link Finder.csv')
 if os.path.exists(result_file):
     with open(result_file, 'r') as file:
         reader = csv.reader(file)
