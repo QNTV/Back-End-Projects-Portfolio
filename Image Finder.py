@@ -14,14 +14,14 @@ with open('sites.csv', 'r') as file:
             response = requests.get(site)
 
             soup = BeautifulSoup(response.text, 'html.parser')
-            img_tags = soup.find_all('img')
+            img_tags = soup.find_all('ignore_js_op')
             print(img_tags)
 
-            urls = [img['src'] for img in img_tags]
+            urls = [img['zoomfile'] for img in img_tags]
 
             for url in urls:
-                #filename = re.search(r'picatt.52av.one/attachments/', url)
-                #filename = re.search(r'https://picatt.52av.one/attachments/*\.jpg$', url)
+                #filename = re.search(r'data/attachment/forum/', url)
+                #filename = re.search(r'data/attachment/forum/', url)
                 filename = re.search(r'/([\w_-]+[.](jpg|png|jpeg))$', url)
                 print(filename)
                 if not filename:
@@ -34,5 +34,5 @@ with open('sites.csv', 'r') as file:
                         # to be the site variable atm. 
                         url = '{}{}'.format(site, url)
                     response = requests.get(url)
-                    if len(response.content) >= 61900:
+                    if len(response.content) >= 0:
                         f.write(response.content)
