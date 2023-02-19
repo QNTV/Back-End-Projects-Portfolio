@@ -151,7 +151,7 @@ from bs4 import BeautifulSoup
 import os
 import csv
 
-current_directory = r'C:\Users\qnguyen\Downloads\Back-End-Projects-Portfolio'
+current_directory = r'C:\Users\QuangTrang\source\repos\z'
 files = set()
 
 # Read file names from files.csv and add them to the set 'files'
@@ -200,6 +200,8 @@ with open('sites.csv', 'r') as file:
 
             for img_url in img_urls:
                 filename = re.search(r'/([\w_-]+[.](jpg|png|jpeg))$', img_url)
+                #filename = re.search(r'picatt.52av.one/attachments/', img_url)
+                #filename = re.search(r'data/attachment/*\.jpg$', img_url)
                 if not filename:
                     print("Regex didn't match with the url: {}".format(img_url))
                     continue
