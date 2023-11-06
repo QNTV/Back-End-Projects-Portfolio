@@ -1,7 +1,7 @@
 import os
 import csv
 
-folder_directory = r'C:\Users\qnguyen\Downloads\Back-End-Projects-Portfolio'
+folder_directory = r'C:\Users\QuangTrang\source\repos\z\New folder'
 output_file = 'files.csv'
 
 # Get a list of all the files in the directory
