@@ -47,8 +47,8 @@
 import os
 import shutil
 
-source_folder = r"C:\Users\QuangTrang\Desktop\baby camera\record\20230818"
-destination_folder = r"C:\Users\QuangTrang\Desktop\baby camera\record\20230818"
+source_folder =      r"C:\Users\QuangTrang\Desktop\baby camera\record\20231105"
+destination_folder = r"C:\Users\QuangTrang\Desktop\baby camera\record\20231105"
 
 subfolders = os.listdir(source_folder)
 
